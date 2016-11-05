@@ -1,0 +1,23 @@
+# correct -> How can one calculate the average miles per gallon (mpg) by number of cylinders in the car (cyl)? -> See Answer #1 
+# Wrong. Iris Sepal.Length Mean -> 7 -> See Answer # 2
+# correct -> means of variables of Sepal-Length, Sepal-Width, Pedal-Length, Pedal-Width -> See Answer #3
+# Correct -> What happens after you enter this command debug(ls) -> Answer #4
+# wrong -> what is the absolute difference between the average horsepower of 4-cylinder cars and the average horsepower of 8-cylinder cars? -> 12
+#
+# Answer 1
+tapply(mtcars$mpg, mtcars$cyl, mean)
+sapply(split(mtcars$mpg, mtcars$cyl, mean))
+with(mtcars, tapply(mpg,cyl, mean))
+#
+# Answer 2
+tapply(iris$Sepal.Length, iris$Species, mean)
+#
+# Answer 3
+apply(iris[, 1:4], 2, mean)
+#
+# Answer 4
+Immediately stops function and brings up browser
+#
+# Answer 5
+a <- tapply(mtcars$hp, mtcars$cyl, mean)
+a[1] - a[3] -> 126.5779 -> 127

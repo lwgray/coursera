@@ -18,6 +18,7 @@ rankhospital <- function(state, outcome, num){
         if (state %in% input$State) {
                 y <- input[which(input$State == state),]
         } else {
+                print(state)
                 stop('invalid state')
         }
         
